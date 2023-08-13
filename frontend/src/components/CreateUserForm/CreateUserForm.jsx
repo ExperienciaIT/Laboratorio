@@ -16,7 +16,7 @@ NOMBRE DE QUIEN CREA EL USUARIO (Registro automático
 EDAD (Calculada automáticamente)
 */
 
-function ClientForm() {
+function CreateUserForm() {
   const [userData, setUserData] = useState({
     nombres: "",
     apellidos: "",
@@ -165,4 +165,4 @@ function ClientForm() {
   );
 }
 
-export default ClientForm;
+export default CreateUserForm;

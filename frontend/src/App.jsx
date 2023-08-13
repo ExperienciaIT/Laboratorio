@@ -1,11 +1,11 @@
 import { Navigate, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
-import { NavBar } from "./routes/components/NavBar";
-import { HomeScreen } from "./routes/components/HomeScreen";
-import { AboutScreen } from "./routes/components/AboutScreen";
-import { ServiceScreen } from "./routes/components/ServiceScreen";
 
-import ClientForm from "./routes/components/ClientForm";
+import { Home } from "./page/Home/Home";
+import { NavBar } from "./components/NavBar";
+import { AboutScreen } from "./components/AboutScreen";
+import { ServiceScreen } from "./components/ServiceScreen";
+import CreateUserForm from "./components/CreateUserForm/CreateUserForm";
 
 export const App = () => {
   return (
@@ -13,10 +13,10 @@ export const App = () => {
       <NavBar />
 
       <Routes>
-        <Route exact path="/" Component={HomeScreen}></Route>
+        <Route exact path="/" Component={Home}></Route>
         <Route path="/about" Component={AboutScreen}></Route>
         <Route path="/services" Component={ServiceScreen}></Route>
-        <Route path="/register" Component={ClientForm}></Route>
+        <Route path="/register" Component={CreateUserForm}></Route>
 
         <Route path="/*" Component={<Navigate to="/" replace={true} />}></Route>
       </Routes>
