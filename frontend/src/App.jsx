@@ -1,22 +1,25 @@
-import { Navigate, Route } from 'react-router-dom'
-import { Routes } from 'react-router-dom'
-import { Header } from './routes/components/Header'
-import { HomeScreen } from './routes/components/HomeScreen'
-import { AboutScreen } from './routes/components/AboutScreen'
-import { ServiceScreen } from './routes/components/ServiceScreen'
+import { Navigate, Route } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { NavBar } from "./routes/components/NavBar";
+import { HomeScreen } from "./routes/components/HomeScreen";
+import { AboutScreen } from "./routes/components/AboutScreen";
+import { ServiceScreen } from "./routes/components/ServiceScreen";
+
+import ClientForm from "./routes/components/ClientForm";
 
 export const App = () => {
   return (
     <>
-      <Header></Header>
+      <NavBar />
 
       <Routes>
-        <Route path="/" element={<HomeScreen />}></Route>
-        <Route path="/about" element={<AboutScreen />}></Route>
-        <Route path="/services" element={<ServiceScreen />}></Route>
-        <Route path='/*' element={<Navigate to="/" replace={true} />}></Route>
+        <Route exact path="/" Component={HomeScreen}></Route>
+        <Route path="/about" Component={AboutScreen}></Route>
+        <Route path="/services" Component={ServiceScreen}></Route>
+        <Route path="/register" Component={ClientForm}></Route>
+
+        <Route path="/*" Component={<Navigate to="/" replace={true} />}></Route>
       </Routes>
     </>
-  )
-}
-
+  );
+};
