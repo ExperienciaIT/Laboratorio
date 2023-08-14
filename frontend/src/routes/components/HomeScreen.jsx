@@ -1,8 +1,7 @@
-
 export const HomeScreen = () => {
-    return (
-        <>
-        <h1>Home Screen</h1>
-        </>
-    )
+  return (
+    <>
+      <h1>Home Screen</h1>
+    </>
+  )
 }
